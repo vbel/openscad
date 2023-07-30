@@ -1209,6 +1209,16 @@ void register_builtin_functions()
     "object([ object, ] [ key-val list, ] key=value, ...) -> object",
   });
 
+  Builtins::init("obj", new BuiltinFunction(&builtin_object, &Feature::ExperimentalObjectFunction),
+  {
+    "obj([ object, ] [ key-val list, ] key=value, ...) -> object",
+  });
+
+  Builtins::init("o", new BuiltinFunction(&builtin_object, &Feature::ExperimentalObjectFunction),
+  {
+    "o([ object, ] [ key-val list, ] key=value, ...) -> object",
+  });
+
   Builtins::init("has_key", new BuiltinFunction(&builtin_has_key, &Feature::ExperimentalObjectFunction),
   {
     "has_key(object, key) -> boolean",
